@@ -1,1 +1,1 @@
-# java_pattrn
+# java pattrn question solution
