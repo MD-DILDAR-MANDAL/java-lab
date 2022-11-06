@@ -1,1 +1,1 @@
-# java pattrn question solution
+# java pattern question's solution
