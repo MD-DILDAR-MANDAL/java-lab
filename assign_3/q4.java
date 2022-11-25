@@ -24,5 +24,6 @@ class q4{
 			else if (arr[i]==max)arr[i]=min;
 		}
 		System.out.println("Array after exchange: arr= " + Arrays.toString(arr));
-}}
+	}
+}
 		
