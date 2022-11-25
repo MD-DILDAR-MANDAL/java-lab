@@ -27,7 +27,7 @@ class reservation{
 	}
 }
 
-class as2q1{
+class q1{
 	static void allocate(){
 		switch((arr[i].seatchoice)){
 			case "low":
