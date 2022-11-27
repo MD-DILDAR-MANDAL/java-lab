@@ -1,122 +1,130 @@
 import java.util.*;
-
-class passengers{
-	String name;
-	int age;
-	String seatchoice;
-	public void passengers(){
-		System.out.println("Enter the name: ");
-		this.name=scn.nextLine();
-		System.out.println("Enter the age: ");
-		this.age=scn.nextInt();
-		System.out.println("Enter the Seat choice: ");
-		System.out.println("low, mid, up, upside, lowside");
-		this.seatchoice=nextLine();
-	}
+public class Main
+{
+    int seats=0,low=0,upp=0,mid=0,sl=0,su=0;
+    void booking()
+    {
+        int flag=0;
+        if(seats==72)
+            System.out.println("RESERVATION IS FULL");
+        else
+        {
+            Scanner s1=new Scanner(System.in);
+            System.out.println("Enter your age: ");
+            int age=s1.nextInt();
+            if(age>=65)
+            {
+                System.out.print("Enter your choice of seat\n(1) Lower Berth (LB)\n(2) Upper Berth (UB)\n(3) Middle Berth (MB)\n(4) Side Lower (SL)\n(5) Side Upper (SU)\n");
+                System.out.println("Seats available in - \t(1) Lower Berth (LB) - "+(18-low)+"\t(2) Upper Berth (UB)- "+(18-upp)+"\t(3) Middle Berth (MB)- "+(18-mid)+"\t(4) Side Lower (SL)- "+(9-sl)+"\t(5) Side Upper (SU)- "+(9-su)+"\n");
+                int ch=s1.nextInt();
+                if(ch==1){
+                    if(low<18){
+                        low++;
+                        System.out.println("Seat Booked in Lower Berth");
+                    }
+                    else{
+                        System.out.println("Seats are already full in that section");
+                        flag=1;
+                    }
+                    
+                }
+                else if(ch==2){
+                    if(upp<18){
+                        upp++;
+                        System.out.println("Seat Booked in Upper Berth");
+                    }
+                    else{
+                        System.out.println("Seats are already full in that section");
+                        flag=1;
+                    }
+                }
+                else if(ch==3){
+                    if(mid<18){
+                        mid++;
+                        System.out.println("Seat Booked in Middle Berth");
+                    }
+                    else{
+                        System.out.println("Seats are already full in that section");
+                        flag=1;
+                    }
+                }
+                else if(ch==4){
+                    if(sl<9){
+                        System.out.println("Seat Booked in Side Lower");
+                        sl++;
+                    }
+                    else{
+                        System.out.println("Seats are already full in that section");
+                        flag=1;
+                    }
+                }
+                else if(ch==5){
+                    if(su<9){
+                        su++;
+                        System.out.println("Seat Booked in Side Upper");
+                    }
+                    else{
+                        System.out.println("Seats are already full in that section");
+                        flag=1;
+                    }
+                }
+                else {
+                    System.out.println("Please Choose correct number!");
+                    flag=1;
+                }
+                if(flag==0){
+                    seats++;
+                }
+            }
+            else
+            {
+                if(low<18){
+                    low++;
+                    System.out.println("Seat Booked in Lower Berth");
+                }
+                else if(upp<18){
+                    upp++;
+                    System.out.println("Seat Booked in Upper Berth");
+                }
+                else if(mid<18){
+                    mid++;
+                    System.out.println("Seat Booked in Middle Berth");
+                }
+                else if(sl<18){
+                    sl++;
+                    System.out.println("Seat Booked in Side Lower");
+                }
+                else if(su<18){
+                    su++;
+                    System.out.println("Seat Booked in Side Upper");
+                }
+                seats++;
+            }
+        }
+    }
+    void availability()
+    {
+        System.out.println("Only "+(72-seats)+" seates are available..");
+        System.out.println("Seats available in - \n(1) Lower Berth (LB) - "+(18-low)+"\n(2) Upper Berth (UB)- "+(18-upp)+"\n(3) Middle Berth (MB)- "+(18-mid)+"\n(4) Side Lower (SL)- "+(9-sl)+"\n(5) Side Upper (SU)- "+(9-su)+"\n");
+    }
+    public static void main(String[] args)
+    {
+        Main r=new Main();
+        Scanner s1=new Scanner(System.in);
+        System.out.println("Welcome to Railway Reservation...\n");
+        while(true)
+        {
+            System.out.println("\n1) Reservation process \n2) Availability of seats \n3) Exit \nEnter your choice\t");
+            int choice=s1.nextInt();
+            switch(choice)
+            {
+                case 1: r.booking();
+                    break;
+                case 2: r.availability();
+                    break;
+                case 3: System.exit(0);
+                default :System.out.println("!!Choose correct option..");
+            }
+        }
+    }
 }
-
-class reservation{
-	String pname;
-	String seatalloted;
-	public static reservation(String namep,String pseatallocated){
-		this.pname=namep;
-		this.seatalloted=pseatalloted;}
-	void display(){
-		System.out.println("Passenger name: " + name );
-		System.out.println("Seat alloted: " + seatalloted);
-	}
-}
-
-class q1{
-	static void allocate(){
-		switch((arr[i].seatchoice)){
-			case "low":
-				if (low>0){
-					System.out.println("Seat booked");
-					low--;
-					arrr[i].reservation(name,"low");}
-				else{
-					System.out.println("Seat filled up");
-					System.out.println("Alloting to other empty seats");
-					otherseat((arr[i].seatchoice));}
-			case "mid":
-				if (mid>0){
-					System.out.println("Seat booked");
-					mid--;
-					arrr[i].reservation(name,"mid");}
-				else{
-					System.out.println("Seat filled up");
-					System.out.println("Alloting to other empty seats");
-					otherseat((arr[i].seatchoice));}
-			case "up":
-				if (up>0){
-					System.out.println("Seat booked");
-					up--;
-					arrr[i].reservation(name,"up");}
-				else{
-					System.out.println("Seat filled up");
-					System.out.println("Alloting to other empty seats");
-					otherseat((arr[i].seatchoice));}
-			case "upside":
-				if (upside>0){
-					System.out.println("Seat booked");
-					upside--;
-					arrr[i].reservation(name,"upside");}
-				else{
-					System.out.println("Seat filled up");
-					System.out.println("Alloting to other empty seats");
-					otherseat((arr[i].seatchoice));}
-			case "lowside":
-				if (lowside>0){
-					System.out.println("Seat booked");
-					lowside--;
-					arrr[i].reservation(name,"lowside");}
-				else{
-					System.out.println("Seat filled up");
-					System.out.println("Alloting to other empty seats");
-					otherseat((arr[i].seatchoice));}
-	}
-}
-	public static void otherseat((arr[i].seatchoice)){
-		if (low>0)
-			arrr[i].reservation(name,"low");
-		else if (mid>0)
-			arrr[i].reservation(name,"mid");
-		else if (up>0)
-			arrr[i].reservation(name,"up");
-		else if (upside>0)
-			arrr[i].reservation(name,"upside");
-		else if (lowside>0)
-			arrr[i].reservation(name,"lowside");
-	}
-	public static void main(String args[]){
-		Scanner scn=new Scanner(System.in);
-		//Program is just limited for 24 seats as per the constraints set
-		System.out.println("Total seats left is 24");
-		System.out.println("The Seats are reserved for female");
-		int upside=3,lowside=3,up=6,mid=6,low=6,n=24;
-		//Array initialisation for Passenger class
-		passengers arr[];
-		arr = new details[24];
-		//Array initialisation for reservation class
-		reservation arrr[];
-		arrr=new reservation[24];
-		for (int i=0;i<24;++i)	arr[i].passsengers();
-		//Alloting seats to senior citizen
-		for (int i=0;i<24;i++){
-			if (arr[i].age>=65)	allocate();
-		}
-		//To allocate the seats to passenger below 65 years
-		for (int i=0;i<24;i++){
-			if (arr[i].age<65)	allocate();
-		}		 
-		//Printing the allocated seats
-		for (int i=0;i<24;i++){
-			arrr[i].display();
-			System.out.println();
-		}
-	}
-}
-		
-			
-
