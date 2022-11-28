@@ -40,18 +40,15 @@ class q2
 {
 	public static void main(String args[])
   {
-    int n;
-    int input;
-    int i;
     Scanner sc=new Scanner(System.in);
     System.out.println("Enter the total number of students want to enroll in the course:-");
-    n=sc.nextInt();
+    int n=sc.nextInt();
     Coursedetails A=new Coursedetails(3,"English",1);
     Coursedetails B=new Coursedetails(3,"Hindi",3);
-    for(i=0;i<n;i++)
+    for(int i=0;i<n;i++)
     {
       System.out.print("Press 1 for "+A.medium+"\nPress 2 for "+B.medium+"\n");
-      input=sc.nextInt();
+      int input=sc.nextInt();
       switch(input)
       {
          case 1: 
