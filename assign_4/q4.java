@@ -3,21 +3,21 @@ import java.util.*;
 class optional{
     String deFront(String s){
         String n="";
-        if((s.length())>0 && s.charAt(0)=='a'){
+        if(s.charAt(0)=='a'){
             n+=s.charAt(0);
         }
-        if((s.length())>1 && s.charAt(1)=='b'){
+        if(s.length()>1 && s.charAt(1)=='b'){
             n+=s.charAt(1);
         }
-        for(int i=2;i<s.length();i++){
-            n+=s.charAt(i);
-        }
+        int l = s.length();
+        n+=s.substring(2,l);
         return n;
-    } 
+    }
 }
 
 class q4 {
     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
         System.out.println("Enter the string: ");
         String g=sc.nextLine();
         optional ob=new optional();
