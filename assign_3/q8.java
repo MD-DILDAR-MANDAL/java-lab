@@ -11,7 +11,7 @@ class q8{
 		for (int i=0;i<n;i++)	arr[i]=scn.nextInt();
 		int min=arr[0];
 		for (int i=0;i<n-1;i++){
-			int temp =Math.abs(arr[i] - arr[i+1]);
+			int temp = Math.abs(arr[i] - arr[i+1]);
 			if(min>temp)min=temp;
 		}
 		int a=0,b=0;

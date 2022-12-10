@@ -19,7 +19,6 @@ class q9{
                 ans=Math.max(ans,total);
                 total=1;
             }
-            
             if(i==n-1){
                 ans=Math.max(ans,total);
             }

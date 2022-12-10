@@ -19,18 +19,18 @@ class q5{
     
 		for(int i=size-1;i>=0;i--){
 			if(cntArrElm[arr[i]]>1){
-        if(i == size-1){
-          sizec--;
-          cntArrElm[arr[i]] --;
-        }
-        else{
+        			if(i == size-1){
+          				sizec--;
+          				cntArrElm[arr[i]] --;
+       				 }
+        			else{
 					cntArrElm[arr[i]] --;	
-          sizec--;
-          for(int j = i;j<(size-1);j++)
-          arr[j]=arr[j+1];
-					}
+         				sizec--;
+          				for(int j = i;j<(size-1);j++)
+          					arr[j]=arr[j+1];
 				}
+			}
 		}
-    for(int i = 0;i<sizec;i++)System.out.print(arr[i]+ " ");
+    		for(int i = 0;i<sizec;i++)System.out.print(arr[i]+ " ");
 	}
 }
